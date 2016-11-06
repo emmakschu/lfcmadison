@@ -1,0 +1,13 @@
+<h1>Last Match</h1>
+
+	<div class="centered">
+		
+		<h2><%= @lastMatch.date.strftime('%a %b %e') %></h2>
+			
+		<p><%= image_tag @lastMatch.homeImg, height: "140px" %><%= image_tag @lastMatch.awayImg, width: "140px" %></p>
+		<h3><%= @lastMatch.home %> &nbsp; <%= @lastMatch.score %> &nbsp; <%= @lastMatch.away %></h3>
+				
+		<h4><i><%= @lastMatch.competition %></i></h4>
+		
+		<p><i><%= @lastMatch.stadium %></i></p>
+	</div>

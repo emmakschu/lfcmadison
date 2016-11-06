@@ -1,0 +1,20 @@
+<!doctype html>
+	<head>
+		<title>Songs | LFC Madison</title>
+	</head>
+
+<section class="main-body-sect">
+
+<h2><%= @song.title %></h2>
+
+<p><%= @song.background .html_safe %></p>
+
+<div class="main-left">
+<iframe src="<%= @song.url %>" allowfullscreen="" height="315" width="420" frameborder="0"></iframe>
+</div>
+
+<div class="main-right">
+<%= @song.lyrics .html_safe %>
+
+</section>
+

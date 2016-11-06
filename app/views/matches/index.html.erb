@@ -1,0 +1,35 @@
+<!doctype html>
+	<head>
+		<title>Schedule | LFC Madison</title>
+	</head>
+
+<h2>Liverpool FC schedule 2016-17</h2>
+
+<table class="alt-color">
+
+  <thead>
+    <th>Date</th>
+    <th>Opponent</th>
+    <th>Result/Time</th>
+    <th>Competition</th>
+    <th>TV</th>
+  </thead>
+
+  <tbody>
+
+  <% @matches.each do |match| %>
+
+
+    <tr>
+      <td><%= match.date.strftime("%a %b %e") %></td>
+      <td><%= link_to match.opponent, match %></td>
+      <td><%= match.score %></td>
+      <td><%= match.competition %></td>
+      <td><%= match.tv %></td>
+    </tr>
+
+  <% end %>
+
+  </tbody>
+
+</table>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'site/favicon.ico' %>
+  </head>
+
+  <body>
+  	
+	<header>
+		<!-- LFC Madison common header, version 2.0
+		last updated 8 Jun 2016 16:34 UTC -->
+		
+		<h1 id="title"><%= link_to "LFC Madison", root_url %></h1>
+		<nav>
+		<ul>
+			<li><%= link_to "About Us", '/about' %>
+				<ul>
+					<li><%= link_to "History", '/about' %></li>
+					<li><%= link_to "Contact Us", '/contact' %></li>
+					<li><%= link_to "Pub", '/pub' %></li>
+				</ul>			
+			</li> 
+			<li><%= link_to "Matchday", '/matches/recent' %>
+				<ul>
+					<li><%= link_to "Next Match", '/matches/next' %></li>
+					<li><%= link_to "Last Match", '/matches/last' %></li>
+					<li><%= link_to "Schedule", '/matches' %></li>
+					<li><%= link_to "Full Tables", '/tables' %></li>
+				</ul>			
+			</li>
+
+			<li><%= link_to "Songs & Chants", '/songs' %></a>
+				<ul>
+					<li><%= link_to "You'll Never Walk Alone", '/songs/1' %></li>
+					<li><%= link_to "We Won it Five Times", '/songs/2' %></li>
+					<li><%= link_to "Fields of Anfield Road", '/songs/3' %></li>
+					<li><%= link_to "Oh, Campione", '/songs/4' %></li>
+					<li><%= link_to "Poetry in Motion (We Are Liverpool)", '/songs/5' %></li>
+					<li><%= link_to "Poor Scouser Tommy", '/songs/6' %></li>				
+				</ul>			
+			</li>
+			
+			<li><%= link_to "Membership", '/members' %>
+				<ul>
+					<li><%= link_to "Why become a member?", '/members' %></li>
+					<li><%= link_to "Join LFC Madison", '/join' %></li>
+				</ul>
+			</li>
+
+			<li><a href="http://lfcmadison.com/links.html">Links</a>
+				<ul>
+					<li><%= link_to "Other LFC Supporters' Clubs", '/usasupporters' %></li>
+					<li><a href="http://jamiecarragher23.co.uk">Jamie Carragher's 23 Foundation</a></li>				
+				</ul>			
+			</li>
+		</ul>
+	</nav>	
+	</header>
+
+	<section class="main-body-sect">
+    <%= yield %>
+	</section>
+	
+	<footer>
+		<table id="social-networking">
+			<tr>
+				<td width="200px"></td>		
+				<td width="250px">Find us on social media: </td>
+				<td width="35px"><a target="_blank" href="http://www.facebook.com/lfcmadison"><%= image_tag 'site/fb_icon.png', size: '32' %></a></td>
+				<td width="35px"><a target="_blank" href="http://www.twitter.com/lfcmadison"><%= image_tag 'site/twitter_icon.png', size: '32' %></a></td>
+				<td width="200px"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>Email us: </td>
+				<td><a href="mailto:lfcmadison@gmail.com"><%= image_tag 'site/gmail_icon.png', size: '32' %></a></td>	
+			</tr>
+			<tr>
+				<td colspan="5" style="text-align:center;">Find us on matchdays at <a target="_blank" href="http://www.hotelred.com/the-wise-restaurant-bar/">HotelRED</a> on Monroe Street.
+			</tr>
+		</table>
+	</footer>
+
+	</footer>
+
+  </body>
+</html>

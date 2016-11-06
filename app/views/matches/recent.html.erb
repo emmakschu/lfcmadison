@@ -1,0 +1,49 @@
+<!doctype html>
+
+	<head>
+		<title>Matches | LFC Madison</title>
+	</head>
+
+<section class="main-body-sect">
+
+	<div class="main-left">
+
+		<h2>Next Match</h2>
+
+		<h3><%= @nextMatch.date.strftime("%a %b %e , %l:%M %P") %></h3>
+		<p class="centered"><%= image_tag @nextMatch.homeImg %><%= image_tag @nextMatch.awayImg %></p>
+
+		<h2>Last Match</h2>
+		<div class="centered"><%= image_tag @lastMatch.homeImg %>&nbsp;<h3 style="display:inline;vertical-align:middle"><%= @lastMatch.score %></h3>&nbsp;<%= image_tag @lastMatch.awayImg %></div>
+
+	</div>
+
+	<div class="main-right">
+
+		<h2>PL Table</h2>
+
+		<table class="alt-color">
+			<thead>
+				<th></th>
+				<th>Team</th>
+				<th>Played</th>
+				<th>Pts</th>
+			</thead>
+
+			<% @teams.each_with_index do |t, i| %>
+
+				<tr>
+					<td><%= i + 1 %></td>
+					<td><%= t.team %></td>
+					<td><%= t.played %></td>
+					<td><%= t.points %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+
+</section>
+
+<script>
+$('img').css({'height': '140px', 'vertical-align':'middle'});
+</script>

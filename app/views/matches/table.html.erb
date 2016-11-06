@@ -1,0 +1,39 @@
+<!doctype html>
+
+	<head>
+		<title>Table | LFC Madison</title>
+	</head>
+
+<h1>Premier League Table</h1>
+
+<table class="alt-color">
+
+<thead>
+	<tr>
+		<th></th>
+		<th>Team</th>
+		<th>Pld</th>
+		<th>W</th>
+		<th>D</th>
+		<th>L</th>
+		<th>Goal Diff</th>
+		<th>Pts</th>
+	</tr>
+</thead>
+
+<% @teams.each_with_index do |t, i| %>
+
+	<tr>
+		<td><%= i + 1 %></td>
+		<td><%= t.team %></td>
+		<td><%= t.played %></td>
+		<td><%= t.won %></td>
+		<td><%= t.drawn %></td>
+		<td><%= t.lost %></td>
+		<td><%= t.goalDiff %></td>
+		<td><%= t.points %></td>
+	</tr>
+
+<% end %>
+
+</table>

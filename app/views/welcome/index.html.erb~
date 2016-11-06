@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<head>
+		<title>Home | LFC Madison</title>
+	</head>
+
+<h2>Welcome to LFCMadison.com</h2>
+	
+<div class="main-left">
+	<h3>Next Match:</h3>
+	
+	<div class="centered">	
+		<p><%= image_tag @nextMatch.homeImg, height: "140px" %><%= image_tag @nextMatch.awayImg, width: "140px" %></p>
+		<h3><%= @nextMatch.date.strftime('%a %b %e') %><br>
+		<%= @nextMatch.date.strftime('%l:%M %P') %></h3>
+		<p><i><%= @nextMatch.competition %></i></p>
+	</div>
+
+</div>
+
+<div class="main-right">
+
+	<h3>Want to become an LFCMadison member?</h3>
+		<p>The online membership form is back online. You can find it at <%= link_to "lfcmadison.com/join", '/join' %>. Alternatively, you can join LFC Madison by speaking with Bryn or Michael at the pub on matchday (just not while Coutinho's about to take a free kick!).</p>
+</div> 
+
+<script>
+$('img').css({'max-height': '120px', 'max-width': '120px'});
+</script>

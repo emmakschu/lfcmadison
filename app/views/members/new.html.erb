@@ -1,0 +1,51 @@
+<!doctype html>
+	<head>
+		<title>Join | LFC Madison</title>
+	</head>
+	
+	<h2>Join LFC Madison</h2>
+	
+	<%= form_for :member, method: "post" do |m| %>
+	<table>
+		<tr>
+			<td>First name:</td>
+			<td><%= m.text_field :firstName %></td>
+		</tr>
+		
+		<tr>
+			<td>Last name:</td>
+			<td><%= m.text_field :lastName %></td>
+		</tr>
+		
+		<tr>
+			<td>Email:</td>
+			<td><%= m.email_field :email %></td>
+		</tr>
+		
+		<tr>
+			<td>City:</td>
+			<td><%= m.text_field :city %></td>
+		</tr>
+		
+		<tr id="isMember">
+			<td>Are you a member of Liverpool FC?</td>
+			<td><%= m.select :isLFCmember, [['no',0],['yes',1]] %></td>
+		</tr>
+		
+		<tr id="memNum"> 
+			<td>What is your LFC member number?</td>
+			<td><%= m.number_field :memNumber %></td>
+		</tr>
+	</table>
+	
+	<p class="centered"><%= m.submit "Join" %></p>
+	
+	<% end %>
+	
+<script>
+$('table').css({'margin-left':'auto','margin-right':'auto'});
+$('#memNum').hide();
+$('#isMember').change(function(){
+	$('#memNum').toggle();
+});
+</script>
